@@ -4,3 +4,4 @@ pymongo
 matplotlib
 pandas
 scikit-learn
+yfinance
