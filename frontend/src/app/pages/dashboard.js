@@ -19,6 +19,8 @@ export default function Dashboard() {
         let delayed;
         if (graphs && chartRef.current) {
             const ctx = chartRef.current.getContext("2d");
+            chartRef.current.width = 400; // Set the desired width
+            chartRef.current.height = 300; // Set the desired height
             new Chart(ctx, {
                 type: "bar",
                 data: {
@@ -33,6 +35,7 @@ export default function Dashboard() {
                     ],
                 },
                 options: {
+                    maintainAspectRatio: false,
                     animation: {
                         onComplete: () => {
                           delayed = true;
