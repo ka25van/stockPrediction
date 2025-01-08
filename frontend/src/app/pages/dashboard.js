@@ -11,7 +11,7 @@ export default function Dashboard() {
     const chartRef = useRef(null);
 
     const handleCheck = async () => {
-        const response = await axios.post("http://localhost:5000/predict", { stock });
+        const response = await axios.post("https://stockprediction-t092.onrender.com/predict", { stock });
         setGraphs(response.data);
     };
 
