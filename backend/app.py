@@ -8,7 +8,10 @@ from pymongo import MongoClient
 import pandas as pd
 import matplotlib.pyplot as plt
 from prediction_model import predict_stock
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 app=Flask(__name__)
 CORS(app)
 # client=MongoClient('mongodb://localhost:27017/')
@@ -58,4 +61,5 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.getenv("PORT", 5000))
+    app.run(debug=True, port=port)
